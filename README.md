@@ -10,7 +10,9 @@ To install the application run the following on node.js console:
 4. yarn add aws-amplify react-router-dom react-player
 5. npm install faker
 6. npm install -g @aws-amplify/cli
-7. amplify init
+7. amplify init and follow along until you get "Your project has been successfully initialized and connected to the cloud!".
+8. 
+
 
 
 
