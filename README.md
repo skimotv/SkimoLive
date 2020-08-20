@@ -1,7 +1,7 @@
 # SkimoLive
 This is based on Amazon's IVS
 
-the soruce code is stored in the master 
+the source code is stored in the master 
 
 To use the application run 
 "npm create-react-app {app-name}"
