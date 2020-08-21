@@ -88,12 +88,16 @@ type Comment @model
   a. const streamUrl = <playback url>
   b. import ReactPlayer from 'react-player';
 2. In the header copy the following:
-        <div style={{width: 900}}>
+      <div style={{width: 900}}>
       <ReactPlayer
         url={streamUrl}
         width="100%"
         height="100%"
+        playing
         />
+      </div>
+3. Run npm start
+4.  amplify push --y
 
 
 
