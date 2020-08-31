@@ -1,6 +1,10 @@
 import React from 'react';
 import Comment from "./comments";
 import ApprovalCard from "./ApprovalCard"
+import { Auth, API} from 'aws-amplify'
+import {createComment as CreateComment} from '../graphql/mutations'
+import {listComment as ListComment} from '../graphql/queries'
+import { onCreateCommeet as OnCreateCommeet} from '../graphql/subscriptions'
 
 
 class CommentList extends React.Component{
@@ -16,10 +20,22 @@ class CommentList extends React.Component{
     this.setState({userInput: event.target.value});
   }
 
-  commentCreater = (event) =>{
+  commentCreater = async (event) =>{
     if(this.state.userInput.length === 0){
       return ;
     }
+    const description = this.state.userInput
+    const variables = {
+      input: {description:{description}}
+    }
+    await API.graphql({
+      query: CreateComment,
+      variables: {
+        input: {description},
+      },
+      authMode: "AMAZON_COGNITO_USER_POOLS"
+    })
+
     this.state.toDoList.push([this.state.author,this.state.userInput])
     this.setState({userInput: ""})
   }
@@ -39,7 +55,7 @@ class CommentList extends React.Component{
     }
     const items = this.state.toDoList.map(([usr, msg]) =>{
       return(
-        <ApprovalCard>
+        <ApprovalCard message={msg}>
           <Comment name={usr} message={msg}/>
         </ApprovalCard>
       )
@@ -47,14 +63,14 @@ class CommentList extends React.Component{
     return(
       <div className="overarching comments ui">
           <React.Fragment>
-            <div style = {{ border:'1px solid black'}}>
+            <div style = {{}}>
               <form className="commentForm" onSubmit={this.commentCreater}>
               <input type="text" placeholder="Your name" value={this.state.author} onChange={this.handleAuthorChange} />
               <input type="text" placeholder="Say something..."  value={this.state.userInput} onChange={this.handleTextChange} />
               <input type="submit" value="Post" />
               </form>
             </div>
-            <div className="ui container comments" style = {{height: '400px' ,maxHeight: '400px',overflowY: 'scroll', border:'1px solid black'}}>
+            <div className="ui container comments" style = {{width: '400px', height: '434px' ,maxHeight: '434px',overflowY: 'scroll'}}>
               {ifStart()}
               {items}
             </div>

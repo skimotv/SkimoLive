@@ -30,7 +30,7 @@ class Timer extends React.Component{
 
     return(
       <div>
-        <p>{hours} : {minutes} : {seconds} : {centisecond}</p>
+        <p style={{padding:"6px"}}>{hours} : {minutes} : {seconds} : {centisecond}</p>
       </div>
     );
   }
