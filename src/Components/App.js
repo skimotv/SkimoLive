@@ -92,7 +92,7 @@ class App extends React.Component{
                     <i class="pause icon"></i>
                     Pause
                   </button>
-                  <Bookmark assetid = {this.assetid} apikey="abcd" />
+                  <Bookmark username={this.emailId} assetid = {this.assetid} apikey="abcd" />
                 </div>
               </div>
               <div className="Comments">
