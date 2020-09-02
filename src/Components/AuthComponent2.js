@@ -35,6 +35,7 @@ class AuthComponent2 extends React.Component {
           <button onClick={() => Auth.signOut()}>Sign Out</button>
         ) : (
           <React.Fragment>
+          <h1>Oauth signIn</h1>
           <button onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Google Sign In</button>
           <button onClick={() => Auth.federatedSignIn()}>Sign In</button>
           </React.Fragment>

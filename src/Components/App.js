@@ -34,7 +34,7 @@ const Router= () => {
           <br />
         </Route>
         <Route exact path ="/auth">
-          <AuthComponent2 />
+          <AuthComponent />
         </Route>
       </Switch>
     </HashRouter>
@@ -45,16 +45,18 @@ const Router= () => {
 class App extends React.Component{
   state = {};
   GUID = ""
-  streamUrl = "https://www.youtube.com/watch?v=FjU_x1106pg";
+  assetid = uuidv4()
+  streamUrl = "https://www.youtube.com/watch?v=bnP5Hxt0C_g";
 
   componentDidMount() {
     this.GUID = this.props.match.params.VideoGUID
     {/*
       Hash function cannot reconvert hash to string
-      and key need not have the link url 
+      and key need not have the link url
       */}
-      axios.get('',{
-
+      axios.post('https://skimo.tv/live/recording?assetid=abc&apikey=abcd',{
+        params: {
+        }
       }
     )
 

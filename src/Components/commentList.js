@@ -2,10 +2,11 @@ import React from 'react';
 import Comment from "./comments";
 import ApprovalCard from "./ApprovalCard"
 import { Auth, API} from 'aws-amplify'
+{/*
 import {createComment as CreateComment} from '../graphql/mutations'
 import {listComment as ListComment} from '../graphql/queries'
 import { onCreateCommeet as OnCreateCommeet} from '../graphql/subscriptions'
-
+*/}
 
 class CommentList extends React.Component{
   state = {userInput:"", toDoList:[], author:"" };
@@ -24,6 +25,7 @@ class CommentList extends React.Component{
     if(this.state.userInput.length === 0){
       return ;
     }
+    {/*
     const description = this.state.userInput
     const variables = {
       input: {description:{description}}
@@ -35,7 +37,7 @@ class CommentList extends React.Component{
       },
       authMode: "AMAZON_COGNITO_USER_POOLS"
     })
-
+    */}
     this.state.toDoList.push([this.state.author,this.state.userInput])
     this.setState({userInput: ""})
   }

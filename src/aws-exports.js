@@ -3,28 +3,11 @@
 
 const awsmobile = {
     "aws_project_region": "ap-south-1",
-    "aws_cognito_identity_pool_id": "ap-south-1:4107e2f8-45f8-45b0-a462-dfdcacbfeb77",
+    "aws_cognito_identity_pool_id": "ap-south-1:169a56aa-d216-4e5c-a09e-712c130e77da",
     "aws_cognito_region": "ap-south-1",
-    "aws_user_pools_id": "ap-south-1_vxnmY6MNr",
-    "aws_user_pools_web_client_id": "5d95t5ledaf403lhne3gqic7se",
-    "oauth": {
-        "domain": "japp5aca48915-aca48915-dev.auth.ap-south-1.amazoncognito.com",
-        "scope": [
-            "phone",
-            "email",
-            "openid",
-            "profile",
-            "aws.cognito.signin.user.admin"
-        ],
-        "redirectSignIn": "http://localhost:3000/SkimoLive#/home/",
-        "redirectSignOut": "http://localhost:3000/SkimoLive#/auth/",
-        "responseType": "code"
-    },
-    "federationTarget": "COGNITO_USER_POOLS",
-    "aws_appsync_graphqlEndpoint": "https://sgozsir5lnavxcsp2wusam4cmu.appsync-api.ap-south-1.amazonaws.com/graphql",
-    "aws_appsync_region": "ap-south-1",
-    "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-bxnjnmjlazdhbjeecdxrvwsruq"
+    "aws_user_pools_id": "ap-south-1_iPDaEMnXH",
+    "aws_user_pools_web_client_id": "7blenf56a82j4rtvtc96o3l4m4",
+    "oauth": {}
 };
 
 
