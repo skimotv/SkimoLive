@@ -47,21 +47,23 @@ class App extends React.Component{
   GUID = ""
   assetid = uuidv4()
   streamUrl = "https://www.youtube.com/watch?v=bnP5Hxt0C_g";
+  emailId = ""
 
   componentDidMount() {
     this.GUID = this.props.match.params.VideoGUID
-    {/*
-      Hash function cannot reconvert hash to string
-      and key need not have the link url
-      */}
-      axios.post('https://skimo.tv/live/recording?assetid=abc&apikey=abcd',{
-        params: {
-        }
-      }
-    )
 
-
-    console.log(this.GUID)
+      Auth.currentAuthenticatedUser().then((user) => {
+        console.log('user email = ' + user.attributes.email);
+        this.emailId = user.attributes.email
+        const data = JSON.stringify({
+          assetid : this.assetid,
+          apikey :"abcd",
+          username: this.emailId
+        })
+        console.log(data)
+        axios.post('https://skimo.tv/live/recording',data)
+        this.setState()
+      });
   }
 
   render(){
@@ -90,16 +92,16 @@ class App extends React.Component{
                     <i class="pause icon"></i>
                     Pause
                   </button>
-                  <Bookmark />
+                  <Bookmark assetid = {this.assetid} apikey="abcd" />
                 </div>
               </div>
               <div className="Comments">
-                <CommentList />
+                <CommentList username={this.emailId} assetid = {this.assetid} apikey="abcd"/>
               </div>
             </div>
             <br />
             <br />
-            <Notes />
+            <Notes username={this.emailId} assetid = {this.assetid} apikey="abcd"/>
             <br />
             <br />
             <br />

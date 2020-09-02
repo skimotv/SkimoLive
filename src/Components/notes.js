@@ -13,7 +13,19 @@ class Notes extends React.Component{
 
   handleSubmit=(event) =>{
     console.log(this.state.notes+" at " + new Date().toLocaleString())
-    axios.put(API_URL,this.state)
+    const annotations = JSON.stringify({
+      notes: this.state.notes,
+      type: "bookmark",
+      timecode: this.time,
+    })
+    const data = JSON.stringify({
+      assetid : this.props.assetid,
+      apikey : this.props.apikey,
+      annotations : this.annotations,
+      username : this.props.username
+    })
+
+    axios.put(API_URL,data)
     .then(res =>{
       console.log(res);
       console.log(res.data);
