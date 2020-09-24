@@ -84,6 +84,7 @@ type Comment @model
   owner: String
 }
 # VI. Edit src/App.js
+1. Replace the default src file created in your appplication with the src from this git repository
 1. before function add the lines:
   a. const streamUrl = <playback url>
   b. import ReactPlayer from 'react-player';
