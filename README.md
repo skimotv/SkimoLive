@@ -19,7 +19,10 @@ This is based on Amazon's IVS
 2. cd mystreamingapp
 2. npm install -g @aws-amplify/cli
 3. yarn add aws-amplify @aws-amplify/ui-react react-router-dom react-player
-4. amplify init and follow along until you get "Your project has been successfully initialized and connected to the cloud!".
+4. npm install axios
+5. npm install faker
+6. npm install uuid
+7. amplify init and follow along until you get "Your project has been successfully initialized and connected to the cloud!".
 amplify init
 Scanning for plugins...
 Plugin scan successful
@@ -45,6 +48,7 @@ Press Enter to continue
 After you created the account
 ? Do you want to use an AWS profile? Yes
 ? Please choose the profile you want to use default
+
 
 # III. amplify add auth
  Do you want to use the default authentication and security configuration? Default configuration
@@ -109,4 +113,4 @@ type Comment @model
 
 
 to start application run the following on node.js console:
-"npm run"
+"npm run" or "yarn start"
